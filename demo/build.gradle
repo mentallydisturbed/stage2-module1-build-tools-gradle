@@ -1,7 +1,24 @@
 //add everything here
-
+plugins {
+    id 'java'
+}
 test {
     useJUnitPlatform()
+}
+
+group = 'com.epam'
+version = '1.0'
+
+java {
+    sourceCompatibility = "1.8"
+}
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+dependencies {
+    implementation 'org.apache.commons:commons-lang3:3.10'
+    implementation 'com.epam.utils:StringUtils:1.0'
 }
 
 compileJava {}.dependsOn(':utils:publishToMavenLocal')
